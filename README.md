@@ -5,10 +5,10 @@
 <a href="https://godoc.org/github.com/gjbae1212/go-ec2meta"><img src="https://godoc.org/github.com/gjbae1212/go-ec2meta?status.svg"/></a>
 <a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-GREEN.svg" alt="license"/></a>
 </p>
-This Library is to get metadata for EC2 Instances using Golang.    
-It can get information like public-ip, hostname, mac .. and so on, if this machine is EC2 instance in AWS.  
-Maybe you are useful when your application in Docker Container is getting IP information(host machine IP .. and so on).
 
+This Library is to get metadata for EC2 Instances using Golang.  
+It can get information like public-ip, hostname, mac .. and so on, if this machine is EC2 instance in AWS.  
+Maybe you are useful when your application in Docker Container is getting IP information(host machine IP .. and so on).  
 ## Usage
 ```golang
 import  "github.com/gjbae1212/go-ec2meta"
