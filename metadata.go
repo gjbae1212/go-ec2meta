@@ -21,6 +21,7 @@ var (
 	httpClient *http.Client
 
 	ErrUnAvailableService = errors.New("[err] this machine isn't used to metadata service, maybe its machine not in AWS.")
+	ErrNotFound           = errors.New("[err] not found resource.")
 )
 
 // CanLookup is to check whether this machine can access a server serving metadata in AWS.
@@ -89,12 +90,16 @@ func callAPI(url string) ([]string, error) {
 		return []string{}, err
 	}
 
-	body, err := ioutil.ReadAll(ret.Body)
-	if err != nil {
-		return []string{}, err
+	// if http status is 200 ok.
+	if ret.StatusCode == http.StatusOK {
+		body, err := ioutil.ReadAll(ret.Body)
+		if err != nil {
+			return []string{}, err
+		}
+		return strings.Split(string(body), "\n"), nil
+	} else {
+		return []string{}, ErrNotFound
 	}
-
-	return strings.Split(string(body), "\n"), nil
 }
 
 func init() {
