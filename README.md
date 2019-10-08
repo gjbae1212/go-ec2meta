@@ -40,15 +40,14 @@ ips, err := ec2meta.PublicIPV4()
 * [ ] ami-id
 * [ ] ami-launch-index
 * [ ] ami-manifest-path
-* [ ] block-device-mapping/ (multiple option)
-* [ ] block-device-mapping/ (multiple option)
-* [ ] events/ (multiple option)
-* [ ] iam/ (multiple option)
 * [ ] instance-action
 * [ ] instance-id
 * [ ] instance-type
 * [ ] profile
 * [ ] reservation-id
+* [ ] block-device-mapping/ (multiple option)
+* [ ] events/ (multiple option)
+* [ ] iam/ (multiple option)
 * [ ] metrics/ (multiple option)
 * [ ] network/ (multiple option)
 * [ ] placement/ (multiple option)
